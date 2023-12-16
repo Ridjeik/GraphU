@@ -1,0 +1,70 @@
+﻿<Window x:Class="GraphU.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GraphU"
+        ResizeMode="NoResize"
+        mc:Ignorable="d"
+        Title="Головне вікно" Height="450" Width="800"
+        Background="#f2f4ff">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="VerticalAlignment" Value="Center"></Setter>
+            <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            <Setter Property="Background" Value="#8c9fff"></Setter>
+            <Setter Property="FontSize" Value="20"></Setter>
+            <Setter Property="Padding" Value="20, 15"></Setter>
+            <Setter Property="Width" Value="200"></Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Images/main_background.png" AlignmentX="Center" AlignmentY="Top" Stretch="Uniform"></ImageBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <TextBlock FontWeight="Light" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="30">
+                Вітаємо в
+            </TextBlock>
+            <Image Margin="0, 20" Source="/Images/graphu.png" Width="{Binding}"></Image>
+            <TextBlock  FontWeight="Light" HorizontalAlignment="Center" FontSize="23">
+                Час відкрити світ графіки
+            </TextBlock>
+        </StackPanel>
+
+        <Button Click="OpenFractalWindow" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+            Фрактали
+        </Button>
+        <Button Click="OpenColorsWindow" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+            Кольори
+        </Button>
+        <Button Click="OpenMovementWindow" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7"/>
+                </Style>
+            </Button.Resources>
+            Рух
+        </Button>
+    </Grid>
+</Window>
